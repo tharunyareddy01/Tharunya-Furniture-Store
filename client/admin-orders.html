@@ -1,0 +1,219 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Manage Orders - Tharunya Furniture</title>
+
+    <link
+        rel="stylesheet"
+        href="css/style.css"
+    >
+
+</head>
+
+<body class="dashboard-body">
+
+    <!-- NAVBAR -->
+
+    <header class="dashboard-navbar">
+
+        <div class="dashboard-logo">
+            🪑 Tharunya Furniture
+        </div>
+
+        <div class="dashboard-user">
+
+            <span id="adminName">
+                Admin
+            </span>
+
+            <button
+                onclick="logout()"
+                class="logout-button"
+            >
+                Logout
+            </button>
+
+        </div>
+
+    </header>
+
+
+    <!-- SIDEBAR -->
+
+    <aside class="sidebar">
+
+        <a
+            href="admin.html"
+            class="sidebar-link"
+        >
+            🏠 Dashboard
+        </a>
+
+        <a
+            href="admin-products.html"
+            class="sidebar-link"
+        >
+            🛋️ Products
+        </a>
+
+        <a
+            href="admin-orders.html"
+            class="sidebar-link active"
+        >
+            📦 Orders
+        </a>
+
+        <a
+            href="admin-customers.html"
+            class="sidebar-link"
+        >
+            👥 Customers
+        </a>
+
+        <a
+            href="index.html"
+            class="sidebar-link"
+        >
+            🌐 View Store
+        </a>
+
+    </aside>
+
+
+    <!-- MAIN -->
+
+    <main class="dashboard-main">
+
+        <div class="dashboard-heading">
+
+            <p class="section-label">
+                ADMIN PANEL
+            </p>
+
+            <h1>
+                Manage Orders
+            </h1>
+
+            <p>
+                View customer orders and update
+                their delivery status.
+            </p>
+
+        </div>
+
+
+        <!-- FILTER -->
+
+        <section class="filter-card order-filter">
+
+            <div>
+
+                <label for="statusFilter">
+                    Order Status
+                </label>
+
+                <select id="statusFilter">
+
+                    <option value="all">
+                        All Orders
+                    </option>
+
+                    <option value="Pending">
+                        Pending
+                    </option>
+
+                    <option value="Processing">
+                        Processing
+                    </option>
+
+                    <option value="Dispatched">
+                        Dispatched
+                    </option>
+
+                    <option value="On the Way">
+                        On the Way
+                    </option>
+
+                    <option value="Reached">
+                        Reached
+                    </option>
+
+                    <option value="Delivered">
+                        Delivered
+                    </option>
+
+                    <option value="Old Order">
+                        Old Order
+                    </option>
+
+                </select>
+
+            </div>
+
+
+            <div>
+
+                <label for="orderSearch">
+                    Search Order
+                </label>
+
+                <input
+                    type="text"
+                    id="orderSearch"
+                    placeholder="Search order ID..."
+                >
+
+            </div>
+
+        </section>
+
+
+        <!-- ORDERS -->
+
+        <section class="dashboard-section">
+
+            <div class="section-heading">
+
+                <p>
+                    ORDER MANAGEMENT
+                </p>
+
+                <h2>
+                    Customer Orders
+                </h2>
+
+            </div>
+
+
+            <div
+                id="ordersList"
+                class="orders-admin-list"
+            >
+
+                <p class="loading-text">
+                    Loading orders...
+                </p>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <script src="js/admin-orders.js"></script>
+
+</body>
+
+</html>
+

@@ -1,0 +1,14 @@
+
+{
+  "name": "tharunya-furniture-client",
+  "version": "1.0.0",
+  "description": "Tharunya Furniture HTML CSS JavaScript Frontend",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "express": "^4.21.2"
+  }
+}
+

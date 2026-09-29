@@ -1,0 +1,373 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Track Order | Tharunya Furniture</title>
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body class="dashboard-body">
+
+    <!-- NAVBAR -->
+    <nav class="dashboard-navbar">
+
+        <div class="dashboard-logo">
+            🪑 Tharunya Furniture
+        </div>
+
+        <div class="dashboard-user">
+
+            <span id="customerName">
+                Customer
+            </span>
+
+            <button
+                class="logout-button"
+                id="logoutButton">
+                Logout
+            </button>
+
+        </div>
+
+    </nav>
+
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+
+        <a href="customer.html"
+           class="sidebar-link">
+            🏠 Home
+        </a>
+
+        <a href="customer-products.html"
+           class="sidebar-link">
+            🛋️ Furniture
+        </a>
+
+        <a href="customer-orders.html"
+           class="sidebar-link">
+            📦 My Orders
+        </a>
+
+        <a href="customer-tracking.html"
+           class="sidebar-link active">
+            🚚 Track Order
+        </a>
+
+        <a href="customer-billing.html"
+           class="sidebar-link">
+            🧾 Billing
+        </a>
+
+        <a href="index.html"
+           class="sidebar-link">
+            🌐 Store Home
+        </a>
+
+    </aside>
+
+
+    <!-- MAIN -->
+    <main class="dashboard-main">
+
+        <div class="dashboard-heading">
+
+            <div>
+
+                <p class="small-heading">
+                    THARUNYA FURNITURE
+                </p>
+
+                <h1>
+                    Track Your Order
+                </h1>
+
+                <p>
+                    Follow your furniture delivery from order placement to delivery.
+                </p>
+
+            </div>
+
+            <a
+                href="customer-orders.html"
+                class="shop-more-button">
+                📦 My Orders
+            </a>
+
+        </div>
+
+
+        <!-- SELECT ORDER -->
+        <section class="tracking-selector">
+
+            <div>
+
+                <label>
+                    Select Order
+                </label>
+
+                <select id="orderSelector">
+
+                    <option value="">
+                        Select an order
+                    </option>
+
+                </select>
+
+            </div>
+
+            <button
+                id="refreshButton"
+                class="refresh-button">
+                🔄 Refresh Status
+            </button>
+
+        </section>
+
+
+        <p
+            id="trackingMessage"
+            class="product-message">
+            Loading orders...
+        </p>
+
+
+        <!-- ORDER DETAILS -->
+        <section
+            id="trackingContent"
+            class="tracking-content"
+            style="display: none;">
+
+            <div class="tracking-order-card">
+
+                <div class="tracking-order-header">
+
+                    <div>
+
+                        <span>
+                            ORDER ID
+                        </span>
+
+                        <h2 id="trackingOrderId">
+                            -
+                        </h2>
+
+                        <p id="trackingOrderDate">
+                            -
+                        </p>
+
+                    </div>
+
+                    <div
+                        id="currentStatus"
+                        class="tracking-current-status">
+                        Pending
+                    </div>
+
+                </div>
+
+
+                <!-- PROGRESS -->
+                <div class="tracking-progress">
+
+                    <div
+                        class="tracking-line"
+                        id="trackingLine">
+                    </div>
+
+
+                    <div
+                        class="tracking-step"
+                        data-status="Pending">
+
+                        <div class="tracking-circle">
+                            ✓
+                        </div>
+
+                        <p>
+                            Order Placed
+                        </p>
+
+                    </div>
+
+
+                    <div
+                        class="tracking-step"
+                        data-status="Processing">
+
+                        <div class="tracking-circle">
+                            2
+                        </div>
+
+                        <p>
+                            Processing
+                        </p>
+
+                    </div>
+
+
+                    <div
+                        class="tracking-step"
+                        data-status="Dispatched">
+
+                        <div class="tracking-circle">
+                            3
+                        </div>
+
+                        <p>
+                            Dispatched
+                        </p>
+
+                    </div>
+
+
+                    <div
+                        class="tracking-step"
+                        data-status="On the Way">
+
+                        <div class="tracking-circle">
+                            4
+                        </div>
+
+                        <p>
+                            On the Way
+                        </p>
+
+                    </div>
+
+
+                    <div
+                        class="tracking-step"
+                        data-status="Reached">
+
+                        <div class="tracking-circle">
+                            5
+                        </div>
+
+                        <p>
+                            Reached
+                        </p>
+
+                    </div>
+
+
+                    <div
+                        class="tracking-step"
+                        data-status="Delivered">
+
+                        <div class="tracking-circle">
+                            6
+                        </div>
+
+                        <p>
+                            Delivered
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <!-- PRODUCT SUMMARY -->
+                <div class="tracking-products-section">
+
+                    <h2>
+                        Ordered Furniture
+                    </h2>
+
+                    <div
+                        id="trackingProducts">
+                    </div>
+
+                </div>
+
+
+                <!-- AMOUNT -->
+                <div class="tracking-amount">
+
+                    <div>
+
+                        <span>
+                            Original Amount
+                        </span>
+
+                        <strong id="trackingOriginal">
+                            ₹0
+                        </strong>
+
+                    </div>
+
+
+                    <div>
+
+                        <span>
+                            Discount
+                        </span>
+
+                        <strong
+                            id="trackingDiscount"
+                            class="tracking-discount">
+                            ₹0
+                        </strong>
+
+                    </div>
+
+
+                    <div class="tracking-final">
+
+                        <span>
+                            Final Amount
+                        </span>
+
+                        <strong id="trackingTotal">
+                            ₹0
+                        </strong>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- NO ORDERS -->
+        <section
+            id="noTrackingOrders"
+            class="empty-card"
+            style="display: none;">
+
+            <div class="empty-icon">
+                🚚
+            </div>
+
+            <h2>
+                No Orders Available
+            </h2>
+
+            <p>
+                Place a furniture order to start tracking it.
+            </p>
+
+            <a
+                href="customer-products.html"
+                class="shop-more-button">
+                Start Shopping
+            </a>
+
+        </section>
+
+    </main>
+
+
+    <script src="js/customer-tracking.js"></script>
+
+</body>
+</html>
+

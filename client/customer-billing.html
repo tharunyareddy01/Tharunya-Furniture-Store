@@ -1,0 +1,374 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Billing | Tharunya Furniture</title>
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body class="dashboard-body">
+
+    <!-- NAVBAR -->
+    <nav class="dashboard-navbar">
+
+        <div class="dashboard-logo">
+            🪑 Tharunya Furniture
+        </div>
+
+        <div class="dashboard-user">
+
+            <span id="customerName">
+                Customer
+            </span>
+
+            <button
+                class="logout-button"
+                id="logoutButton">
+                Logout
+            </button>
+
+        </div>
+
+    </nav>
+
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+
+        <a href="customer.html"
+           class="sidebar-link">
+            🏠 Home
+        </a>
+
+        <a href="customer-products.html"
+           class="sidebar-link">
+            🛋️ Furniture
+        </a>
+
+        <a href="customer-orders.html"
+           class="sidebar-link">
+            📦 My Orders
+        </a>
+
+        <a href="customer-tracking.html"
+           class="sidebar-link">
+            🚚 Track Order
+        </a>
+
+        <a href="customer-billing.html"
+           class="sidebar-link active">
+            🧾 Billing
+        </a>
+
+        <a href="index.html"
+           class="sidebar-link">
+            🌐 Store Home
+        </a>
+
+    </aside>
+
+
+    <!-- MAIN -->
+    <main class="dashboard-main">
+
+        <div class="dashboard-heading">
+
+            <div>
+
+                <p class="small-heading">
+                    THARUNYA FURNITURE
+                </p>
+
+                <h1>
+                    Billing & Invoice
+                </h1>
+
+                <p>
+                    View and print your furniture order bill.
+                </p>
+
+            </div>
+
+            <button
+                id="printBillButton"
+                class="print-bill-button"
+                style="display: none;">
+                🖨️ Print Bill
+            </button>
+
+        </div>
+
+
+        <!-- ORDER SELECTOR -->
+        <section class="billing-selector">
+
+            <div>
+
+                <label>
+                    Select Order
+                </label>
+
+                <select id="orderSelector">
+
+                    <option value="">
+                        Select an order
+                    </option>
+
+                </select>
+
+            </div>
+
+        </section>
+
+
+        <p
+            id="billingMessage"
+            class="product-message">
+            Loading your orders...
+        </p>
+
+
+        <!-- INVOICE -->
+        <section
+            id="invoice"
+            class="invoice"
+            style="display: none;">
+
+            <!-- INVOICE HEADER -->
+            <div class="invoice-header">
+
+                <div>
+
+                    <h1>
+                        Tharunya Furniture
+                    </h1>
+
+                    <p>
+                        Quality Furniture for Every Home
+                    </p>
+
+                    <p>
+                        Furniture Store
+                    </p>
+
+                </div>
+
+
+                <div class="invoice-title">
+
+                    <h2>
+                        INVOICE
+                    </h2>
+
+                    <p>
+                        Order ID:
+                        <strong id="invoiceOrderId">
+                            -
+                        </strong>
+                    </p>
+
+                    <p>
+                        Date:
+                        <strong id="invoiceDate">
+                            -
+                        </strong>
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- CUSTOMER DETAILS -->
+            <div class="invoice-customer">
+
+                <div>
+
+                    <span>
+                        BILLED TO
+                    </span>
+
+                    <h3 id="invoiceCustomerName">
+                        -
+                    </h3>
+
+                    <p id="invoiceCustomerEmail">
+                        -
+                    </p>
+
+                </div>
+
+
+                <div class="invoice-status-area">
+
+                    <span>
+                        ORDER STATUS
+                    </span>
+
+                    <strong
+                        id="invoiceStatus">
+                        -
+                    </strong>
+
+                </div>
+
+            </div>
+
+
+            <!-- PRODUCTS TABLE -->
+            <div class="invoice-table-wrapper">
+
+                <table class="invoice-table">
+
+                    <thead>
+
+                        <tr>
+
+                            <th>
+                                #
+                            </th>
+
+                            <th>
+                                Product
+                            </th>
+
+                            <th>
+                                Price
+                            </th>
+
+                            <th>
+                                Quantity
+                            </th>
+
+                            <th>
+                                Total
+                            </th>
+
+                        </tr>
+
+                    </thead>
+
+                    <tbody id="invoiceProducts">
+                    </tbody>
+
+                </table>
+
+            </div>
+
+
+            <!-- BILL TOTAL -->
+            <div class="invoice-bottom">
+
+                <div class="invoice-thankyou">
+
+                    <h3>
+                        Thank you for shopping with us!
+                    </h3>
+
+                    <p>
+                        We hope you enjoy your new furniture.
+                    </p>
+
+                    <p>
+                        Tharunya Furniture
+                    </p>
+
+                </div>
+
+
+                <div class="invoice-total-box">
+
+                    <div>
+
+                        <span>
+                            Original Amount
+                        </span>
+
+                        <strong id="invoiceOriginal">
+                            ₹0
+                        </strong>
+
+                    </div>
+
+
+                    <div class="invoice-discount">
+
+                        <span>
+                            Customer Discount
+                        </span>
+
+                        <strong id="invoiceDiscount">
+                            - ₹0
+                        </strong>
+
+                    </div>
+
+
+                    <div class="invoice-final">
+
+                        <span>
+                            Final Amount
+                        </span>
+
+                        <strong id="invoiceTotal">
+                            ₹0
+                        </strong>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="invoice-note">
+
+                <strong>
+                    Note:
+                </strong>
+
+                Regular customers receive a 10% discount on eligible future orders.
+
+            </div>
+
+        </section>
+
+
+        <!-- NO ORDERS -->
+        <section
+            id="noBillingOrders"
+            class="empty-card"
+            style="display: none;">
+
+            <div class="empty-icon">
+                🧾
+            </div>
+
+            <h2>
+                No Orders Available
+            </h2>
+
+            <p>
+                Your invoice will appear here after you place an order.
+            </p>
+
+            <a
+                href="customer-products.html"
+                class="shop-more-button">
+                Start Shopping
+            </a>
+
+        </section>
+
+    </main>
+
+
+    <script src="js/customer-billing.js"></script>
+
+</body>
+</html>
+

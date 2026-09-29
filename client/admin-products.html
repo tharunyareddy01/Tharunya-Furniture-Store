@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Manage Products - Tharunya Furniture</title>
+
+    <link
+        rel="stylesheet"
+        href="css/style.css"
+    >
+
+</head>
+
+
+<body class="dashboard-body">
+
+
+    <!-- ================= NAVBAR ================= -->
+
+    <header class="dashboard-navbar">
+
+        <div class="dashboard-logo">
+            🪑 Tharunya Furniture
+        </div>
+
+
+        <div class="dashboard-user">
+
+            <span id="adminName">
+                Admin
+            </span>
+
+            <button
+                onclick="logout()"
+                class="logout-button"
+            >
+                Logout
+            </button>
+
+        </div>
+
+    </header>
+
+
+
+    <!-- ================= SIDEBAR ================= -->
+
+    <aside class="sidebar">
+
+        <a
+            href="admin.html"
+            class="sidebar-link"
+        >
+            🏠 Dashboard
+        </a>
+
+
+        <a
+            href="admin-products.html"
+            class="sidebar-link active"
+        >
+            🛋️ Products
+        </a>
+
+
+        <a
+            href="admin-orders.html"
+            class="sidebar-link"
+        >
+            📦 Orders
+        </a>
+
+
+        <a
+            href="admin-customers.html"
+            class="sidebar-link"
+        >
+            👥 Customers
+        </a>
+
+
+        <a
+            href="index.html"
+            class="sidebar-link"
+        >
+            🌐 View Store
+        </a>
+
+    </aside>
+
+
+
+    <!-- ================= MAIN ================= -->
+
+    <main class="dashboard-main">
+
+
+        <!-- ================= PAGE HEADING ================= -->
+
+        <div class="dashboard-heading">
+
+            <p class="section-label">
+                ADMIN PANEL
+            </p>
+
+            <h1>
+                Manage Products
+            </h1>
+
+            <p>
+                Add, update, delete and manage
+                furniture products.
+            </p>
+
+        </div>
+
+
+
+        <!-- ================= ADD PRODUCT ================= -->
+
+        <section class="admin-form-card">
+
+
+            <div class="section-heading">
+
+                <p>
+                    PRODUCT MANAGEMENT
+                </p>
+
+                <h2>
+                    Add New Product
+                </h2>
+
+            </div>
+
+
+
+            <form id="productForm">
+
+
+                <!-- Hidden ID for editing -->
+
+                <input
+                    type="hidden"
+                    id="editProductId"
+                >
+
+
+
+                <div class="admin-form-grid">
+
+
+                    <!-- PRODUCT ID -->
+
+                    <div class="form-group">
+
+                        <label for="productId">
+                            Product ID
+                        </label>
+
+                        <input
+                            type="text"
+                            id="productId"
+                            placeholder="Example: P101"
+                            required
+                        >
+
+                    </div>
+
+
+
+                    <!-- PRODUCT NAME -->
+
+                    <div class="form-group">
+
+                        <label for="productName">
+                            Product Name
+                        </label>
+
+                        <input
+                            type="text"
+                            id="productName"
+                            placeholder="Example: Modern Sofa"
+                            required
+                        >
+
+                    </div>
+
+
+
+                    <!-- CATEGORY -->
+
+                    <div class="form-group">
+
+                        <label for="category">
+                            Category
+                        </label>
+
+                        <select
+                            id="category"
+                            required
+                        >
+
+                            <option value="">
+                                Select Category
+                            </option>
+
+                            <option value="Sofas">
+                                Sofas
+                            </option>
+
+                            <option value="Beds">
+                                Beds
+                            </option>
+
+                            <option value="Tables">
+                                Tables
+                            </option>
+
+                            <option value="Chairs">
+                                Chairs
+                            </option>
+
+                            <option value="Wardrobes">
+                                Wardrobes
+                            </option>
+
+                            <option value="Dining">
+                                Dining
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+
+                    <!-- PRICE -->
+
+                    <div class="form-group">
+
+                        <label for="price">
+                            Price (₹)
+                        </label>
+
+                        <input
+                            type="number"
+                            id="price"
+                            placeholder="Example: 25000"
+                            min="1"
+                            required
+                        >
+
+                    </div>
+
+
+
+                    <!-- QUANTITY -->
+
+                    <div class="form-group">
+
+                        <label for="quantity">
+                            Quantity
+                        </label>
+
+                        <input
+                            type="number"
+                            id="quantity"
+                            placeholder="Example: 10"
+                            min="0"
+                            required
+                        >
+
+                    </div>
+
+
+
+                    <!-- IMAGE PATH -->
+
+                    <div class="form-group">
+
+                        <label for="image">
+                            Image Path
+                        </label>
+
+                        <input
+                            type="text"
+                            id="image"
+                            placeholder="Example: images/products/sofa.jpg"
+                            required
+                        >
+
+                    </div>
+
+
+                </div>
+
+
+
+                <!-- MESSAGE -->
+
+                <div
+                    id="productMessage"
+                    class="form-message"
+                ></div>
+
+
+
+                <!-- BUTTONS -->
+
+                <div class="form-buttons">
+
+
+                    <button
+                        type="submit"
+                        class="auth-button"
+                        id="saveProductButton"
+                    >
+                        Add Product
+                    </button>
+
+
+                    <button
+                        type="button"
+                        class="cancel-button"
+                        id="cancelEditButton"
+                        onclick="cancelEdit()"
+                        style="display:none;"
+                    >
+                        Cancel Edit
+                    </button>
+
+
+                </div>
+
+
+            </form>
+
+
+        </section>
+
+
+
+        <!-- ================= FILTERS ================= -->
+
+        <section class="filter-card">
+
+
+            <div>
+
+                <label for="searchProduct">
+                    Search Product
+                </label>
+
+                <input
+                    type="text"
+                    id="searchProduct"
+                    placeholder="Search by name..."
+                >
+
+            </div>
+
+
+
+            <div>
+
+                <label for="filterCategory">
+                    Category
+                </label>
+
+                <select id="filterCategory">
+
+                    <option value="all">
+                        All Categories
+                    </option>
+
+                    <option value="Sofas">
+                        Sofas
+                    </option>
+
+                    <option value="Beds">
+                        Beds
+                    </option>
+
+                    <option value="Tables">
+                        Tables
+                    </option>
+
+                    <option value="Chairs">
+                        Chairs
+                    </option>
+
+                    <option value="Wardrobes">
+                        Wardrobes
+                    </option>
+
+                    <option value="Dining">
+                        Dining
+                    </option>
+
+                </select>
+
+            </div>
+
+
+
+            <div>
+
+                <label for="availabilityFilter">
+                    Availability
+                </label>
+
+                <select id="availabilityFilter">
+
+                    <option value="all">
+                        All
+                    </option>
+
+                    <option value="available">
+                        Available
+                    </option>
+
+                    <option value="out">
+                        Out of Stock
+                    </option>
+
+                </select>
+
+            </div>
+
+
+        </section>
+
+
+
+        <!-- ================= PRODUCT LIST ================= -->
+
+        <section class="dashboard-section">
+
+
+            <div class="section-heading">
+
+                <p>
+                    INVENTORY
+                </p>
+
+                <h2>
+                    Product List
+                </h2>
+
+            </div>
+
+
+
+            <div
+                id="productList"
+                class="product-admin-grid"
+            >
+
+                <p class="loading-text">
+                    Loading products...
+                </p>
+
+            </div>
+
+
+        </section>
+
+
+    </main>
+
+
+
+    <!-- ================= JAVASCRIPT ================= -->
+
+    <script src="js/admin-products.js"></script>
+
+
+</body>
+
+</html>

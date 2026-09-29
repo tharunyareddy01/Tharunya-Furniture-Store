@@ -1,0 +1,233 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>My Orders | Tharunya Furniture</title>
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body class="dashboard-body">
+
+    <!-- NAVBAR -->
+    <nav class="dashboard-navbar">
+
+        <div class="dashboard-logo">
+            🪑 Tharunya Furniture
+        </div>
+
+        <div class="dashboard-user">
+
+            <span id="customerName">
+                Customer
+            </span>
+
+            <button
+                class="logout-button"
+                id="logoutButton">
+                Logout
+            </button>
+
+        </div>
+
+    </nav>
+
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+
+        <a href="customer.html"
+           class="sidebar-link">
+            🏠 Home
+        </a>
+
+        <a href="customer-products.html"
+           class="sidebar-link">
+            🛋️ Furniture
+        </a>
+
+        <a href="customer-orders.html"
+           class="sidebar-link active">
+            📦 My Orders
+        </a>
+
+        <a href="customer-tracking.html"
+           class="sidebar-link">
+            🚚 Track Order
+        </a>
+
+        <a href="customer-billing.html"
+           class="sidebar-link">
+            🧾 Billing
+        </a>
+
+        <a href="index.html"
+           class="sidebar-link">
+            🌐 Store Home
+        </a>
+
+    </aside>
+
+
+    <!-- MAIN -->
+    <main class="dashboard-main">
+
+        <div class="dashboard-heading">
+
+            <div>
+
+                <p class="small-heading">
+                    THARUNYA FURNITURE
+                </p>
+
+                <h1>
+                    My Orders
+                </h1>
+
+                <p>
+                    View your furniture purchases and order status.
+                </p>
+
+            </div>
+
+            <a
+                href="customer-products.html"
+                class="shop-more-button">
+                🛋️ Shop More
+            </a>
+
+        </div>
+
+
+        <!-- ORDER SUMMARY -->
+        <section class="customer-order-summary">
+
+            <div class="customer-order-stat">
+
+                <span>
+                    📦
+                </span>
+
+                <div>
+                    <p>
+                        Total Orders
+                    </p>
+
+                    <h2 id="totalOrders">
+                        0
+                    </h2>
+                </div>
+
+            </div>
+
+
+            <div class="customer-order-stat">
+
+                <span>
+                    🚚
+                </span>
+
+                <div>
+                    <p>
+                        Active Orders
+                    </p>
+
+                    <h2 id="activeOrders">
+                        0
+                    </h2>
+                </div>
+
+            </div>
+
+
+            <div class="customer-order-stat">
+
+                <span>
+                    💰
+                </span>
+
+                <div>
+                    <p>
+                        Total Spent
+                    </p>
+
+                    <h2 id="totalSpent">
+                        ₹0
+                    </h2>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- FILTER -->
+        <section class="customer-orders-filter">
+
+            <label>
+                Filter Orders
+            </label>
+
+            <select id="statusFilter">
+
+                <option value="all">
+                    All Orders
+                </option>
+
+                <option value="Pending">
+                    Pending
+                </option>
+
+                <option value="Processing">
+                    Processing
+                </option>
+
+                <option value="Dispatched">
+                    Dispatched
+                </option>
+
+                <option value="On the Way">
+                    On the Way
+                </option>
+
+                <option value="Reached">
+                    Reached
+                </option>
+
+                <option value="Delivered">
+                    Delivered
+                </option>
+
+                <option value="Old Order">
+                    Old Order
+                </option>
+
+            </select>
+
+        </section>
+
+
+        <p
+            id="ordersMessage"
+            class="product-message">
+            Loading your orders...
+        </p>
+
+
+        <!-- ORDERS -->
+        <section
+            id="customerOrdersList"
+            class="customer-orders-list">
+        </section>
+
+    </main>
+
+
+    <script src="js/customer-orders.js"></script>
+
+</body>
+</html>
+

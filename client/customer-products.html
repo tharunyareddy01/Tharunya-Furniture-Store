@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0">
+
+    <title>
+        Furniture | Tharunya Furniture
+    </title>
+
+    <link
+        rel="stylesheet"
+        href="css/style.css">
+
+</head>
+
+
+<body class="dashboard-body">
+
+
+    <!-- ==============================
+         NAVBAR
+    =============================== -->
+
+    <nav class="dashboard-navbar">
+
+        <div class="dashboard-logo">
+            🪑 Tharunya Furniture
+        </div>
+
+
+        <div class="dashboard-user">
+
+            <span id="customerName">
+                Customer
+            </span>
+
+            <button
+                class="logout-button"
+                id="logoutButton">
+                Logout
+            </button>
+
+        </div>
+
+    </nav>
+
+
+
+    <!-- ==============================
+         SIDEBAR
+    =============================== -->
+
+    <aside class="sidebar">
+
+        <a
+            href="customer.html"
+            class="sidebar-link">
+
+            🏠 Home
+
+        </a>
+
+
+        <a
+            href="customer-products.html"
+            class="sidebar-link active">
+
+            🛋️ Furniture
+
+        </a>
+
+
+        <a
+            href="customer-orders.html"
+            class="sidebar-link">
+
+            📦 My Orders
+
+        </a>
+
+
+        <a
+            href="customer-tracking.html"
+            class="sidebar-link">
+
+            🚚 Track Order
+
+        </a>
+
+
+        <a
+            href="customer-billing.html"
+            class="sidebar-link">
+
+            🧾 Billing
+
+        </a>
+
+
+        <a
+            href="index.html"
+            class="sidebar-link">
+
+            🌐 Store Home
+
+        </a>
+
+    </aside>
+
+
+
+    <!-- ==============================
+         MAIN CONTENT
+    =============================== -->
+
+    <main class="dashboard-main">
+
+
+        <!-- PAGE HEADING -->
+
+        <div class="dashboard-heading">
+
+            <div>
+
+                <p class="small-heading">
+                    THARUNYA FURNITURE
+                </p>
+
+
+                <h1>
+                    Explore Our Furniture
+                </h1>
+
+
+                <p>
+                    Choose beautiful furniture for every room in your home.
+                </p>
+
+            </div>
+
+
+            <button
+                class="cart-top-button"
+                id="cartButton">
+
+                🛒 Cart
+
+                <span id="cartCount">
+                    0
+                </span>
+
+            </button>
+
+        </div>
+
+
+
+        <!-- ==============================
+             FILTERS
+        =============================== -->
+
+        <section class="customer-product-filter">
+
+
+            <!-- SEARCH -->
+
+            <div class="search-box">
+
+                <label>
+                    Search Furniture
+                </label>
+
+
+                <input
+                    type="text"
+                    id="searchInput"
+                    placeholder="Search by furniture name...">
+
+            </div>
+
+
+
+            <!-- CATEGORY -->
+
+            <div>
+
+                <label>
+                    Category
+                </label>
+
+
+                <select id="categoryFilter">
+
+                    <option value="">
+                        All Categories
+                    </option>
+
+
+                    <option value="Sofas">
+                        Sofas
+                    </option>
+
+
+                    <option value="Beds">
+                        Beds
+                    </option>
+
+
+                    <option value="Tables">
+                        Tables
+                    </option>
+
+
+                    <option value="Chairs">
+                        Chairs
+                    </option>
+
+
+                    <option value="Wardrobes">
+                        Wardrobes
+                    </option>
+
+                </select>
+
+            </div>
+
+
+
+            <!-- PRICE -->
+
+            <div>
+
+                <label>
+                    Price
+                </label>
+
+
+                <select id="priceFilter">
+
+                    <option value="">
+                        All Prices
+                    </option>
+
+
+                    <option value="below10000">
+                        Below ₹10,000
+                    </option>
+
+
+                    <option value="10000to25000">
+                        ₹10,000 - ₹25,000
+                    </option>
+
+
+                    <option value="25000to50000">
+                        ₹25,000 - ₹50,000
+                    </option>
+
+
+                    <option value="above50000">
+                        Above ₹50,000
+                    </option>
+
+                </select>
+
+            </div>
+
+
+
+            <!-- SORT -->
+
+            <div>
+
+                <label>
+                    Sort
+                </label>
+
+
+                <select id="sortFilter">
+
+                    <option value="newest">
+                        Newest First
+                    </option>
+
+
+                    <option value="oldest">
+                        Oldest First
+                    </option>
+
+
+                    <option value="low">
+                        Price: Low to High
+                    </option>
+
+
+                    <option value="high">
+                        Price: High to Low
+                    </option>
+
+                </select>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- ==============================
+             MESSAGE
+        =============================== -->
+
+        <p
+            id="productMessage"
+            class="product-message">
+
+            Loading furniture...
+
+        </p>
+
+
+
+        <!-- ==============================
+             PRODUCTS
+        =============================== --> 
+
+        <section
+            id="productGrid"
+            class="customer-product-grid">
+
+        </section>
+
+
+    </main>
+
+
+
+    <!-- ==============================
+         CART MODAL
+    =============================== -->
+
+    <div
+        id="cartModal"
+        class="cart-modal">
+
+
+        <div class="cart-modal-content">
+
+
+            <!-- CART HEADER -->
+
+            <div class="cart-modal-header">
+
+                <h2>
+                    🛒 Your Cart
+                </h2>
+
+
+                <button
+                    id="closeCart">
+
+                    ×
+
+                </button>
+
+            </div>
+
+
+
+            <!-- CART ITEMS -->
+
+            <div id="cartItems">
+
+            </div>
+
+
+
+            <!-- CART TOTAL -->
+
+            <div class="cart-total">
+
+                <strong>
+                    Total:
+                </strong>
+
+
+                <span id="cartTotal">
+                    ₹0
+                </span>
+
+            </div>
+
+
+
+            <!-- CHECKOUT -->
+
+            <button
+                id="checkoutButton"
+                class="primary-dashboard-button">
+
+                Buy Cart Items
+
+            </button>
+
+
+        </div>
+
+    </div>
+
+
+
+    <!-- ==============================
+         JAVASCRIPT
+    =============================== -->
+
+    <script src="js/customer-products.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,372 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Admin Dashboard - Tharunya Furniture</title>
+
+    <link
+        rel="stylesheet"
+        href="css/style.css"
+    >
+
+</head>
+
+<body class="dashboard-body">
+
+    <!-- NAVBAR -->
+
+    <header class="dashboard-navbar">
+
+        <div class="dashboard-logo">
+            🪑 Tharunya Furniture
+        </div>
+
+        <div class="dashboard-user">
+
+            <span id="adminName">
+                Admin
+            </span>
+
+            <button
+                onclick="logout()"
+                class="logout-button"
+            >
+                Logout
+            </button>
+
+        </div>
+
+    </header>
+
+
+    <!-- SIDEBAR -->
+
+    <aside class="sidebar">
+
+        <a
+            href="admin.html"
+            class="sidebar-link active"
+        >
+            🏠 Dashboard
+        </a>
+
+        <a
+            href="admin-products.html"
+            class="sidebar-link"
+        >
+            🛋️ Products
+        </a>
+
+        <a
+            href="admin-orders.html"
+            class="sidebar-link"
+        >
+            📦 Orders
+        </a>
+
+        <a
+            href="admin-customers.html"
+            class="sidebar-link"
+        >
+            👥 Customers
+        </a>
+
+        <a
+            href="index.html"
+            class="sidebar-link"
+        >
+            🌐 View Store
+        </a>
+
+    </aside>
+
+
+    <!-- MAIN CONTENT -->
+
+    <main class="dashboard-main">
+
+        <div class="dashboard-heading">
+
+            <p class="section-label">
+                ADMIN PANEL
+            </p>
+
+            <h1>
+                Dashboard
+            </h1>
+
+            <p>
+                Welcome back! Manage your furniture store
+                from here.
+            </p>
+
+        </div>
+
+
+        <!-- STATISTICS -->
+
+        <section class="stats-grid">
+
+            <div class="stat-card">
+
+                <div class="stat-icon">
+                    🛋️
+                </div>
+
+                <div>
+
+                    <p>
+                        Total Products
+                    </p>
+
+                    <h2 id="totalProducts">
+                        0
+                    </h2>
+
+                </div>
+
+            </div>
+
+
+            <div class="stat-card">
+
+                <div class="stat-icon">
+                    📦
+                </div>
+
+                <div>
+
+                    <p>
+                        Total Orders
+                    </p>
+
+                    <h2 id="totalOrders">
+                        0
+                    </h2>
+
+                </div>
+
+            </div>
+
+
+            <div class="stat-card">
+
+                <div class="stat-icon">
+                    👥
+                </div>
+
+                <div>
+
+                    <p>
+                        Total Customers
+                    </p>
+
+                    <h2 id="totalCustomers">
+                        0
+                    </h2>
+
+                </div>
+
+            </div>
+
+
+            <div class="stat-card">
+
+                <div class="stat-icon">
+                    💰
+                </div>
+
+                <div>
+
+                    <p>
+                        Total Sales
+                    </p>
+
+                    <h2 id="totalSales">
+                        ₹0
+                    </h2>
+
+                </div>
+
+            </div>
+
+
+            <div class="stat-card">
+
+                <div class="stat-icon">
+                    📈
+                </div>
+
+                <div>
+
+                    <p>
+                        Profit
+                    </p>
+
+                    <h2 id="totalProfit">
+                        ₹0
+                    </h2>
+
+                </div>
+
+            </div>
+
+
+            <div class="stat-card">
+
+                <div class="stat-icon">
+                    📉
+                </div>
+
+                <div>
+
+                    <p>
+                        Loss
+                    </p>
+
+                    <h2 id="totalLoss">
+                        ₹0
+                    </h2>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- QUICK ACTIONS -->
+
+        <section class="dashboard-section">
+
+            <div class="section-heading">
+
+                <p>
+                    QUICK ACTIONS
+                </p>
+
+                <h2>
+                    Manage Your Store
+                </h2>
+
+            </div>
+
+
+            <div class="quick-actions">
+
+                <a
+                    href="admin-products.html"
+                    class="quick-action-card"
+                >
+
+                    <span>
+                        🛋️
+                    </span>
+
+                    <h3>
+                        Manage Products
+                    </h3>
+
+                    <p>
+                        Add, update and delete furniture
+                        products.
+                    </p>
+
+                </a>
+
+
+                <a
+                    href="admin-orders.html"
+                    class="quick-action-card"
+                >
+
+                    <span>
+                        📦
+                    </span>
+
+                    <h3>
+                        Manage Orders
+                    </h3>
+
+                    <p>
+                        View orders and update delivery
+                        status.
+                    </p>
+
+                </a>
+
+
+                <a
+                    href="admin-customers.html"
+                    class="quick-action-card"
+                >
+
+                    <span>
+                        👥
+                    </span>
+
+                    <h3>
+                        View Customers
+                    </h3>
+
+                    <p>
+                        View regular and one-time customers.
+                    </p>
+
+                </a>
+
+            </div>
+
+        </section>
+
+
+        <!-- STORE SUMMARY -->
+
+        <section class="dashboard-section">
+
+            <div class="summary-card">
+
+                <div>
+
+                    <p class="section-label">
+                        STORE SUMMARY
+                    </p>
+
+                    <h2>
+                        Tharunya Furniture
+                    </h2>
+
+                    <p>
+                        Manage products, customers, orders
+                        and store performance from the
+                        admin panel.
+                    </p>
+
+                </div>
+
+                <div class="summary-icon">
+                    🏠
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <script src="js/admin.js"></script>
+
+</body>
+
+</html>
+

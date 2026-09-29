@@ -1,0 +1,268 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Customers - Tharunya Furniture</title>
+
+    <link
+        rel="stylesheet"
+        href="css/style.css"
+    >
+
+</head>
+
+<body class="dashboard-body">
+
+    <!-- NAVBAR -->
+
+    <header class="dashboard-navbar">
+
+        <div class="dashboard-logo">
+            🪑 Tharunya Furniture
+        </div>
+
+        <div class="dashboard-user">
+
+            <span id="adminName">
+                Admin
+            </span>
+
+            <button
+                onclick="logout()"
+                class="logout-button"
+            >
+                Logout
+            </button>
+
+        </div>
+
+    </header>
+
+
+    <!-- SIDEBAR -->
+
+    <aside class="sidebar">
+
+        <a
+            href="admin.html"
+            class="sidebar-link"
+        >
+            🏠 Dashboard
+        </a>
+
+        <a
+            href="admin-products.html"
+            class="sidebar-link"
+        >
+            🛋️ Products
+        </a>
+
+        <a
+            href="admin-orders.html"
+            class="sidebar-link"
+        >
+            📦 Orders
+        </a>
+
+        <a
+            href="admin-customers.html"
+            class="sidebar-link active"
+        >
+            👥 Customers
+        </a>
+
+        <a
+            href="index.html"
+            class="sidebar-link"
+        >
+            🌐 View Store
+        </a>
+
+    </aside>
+
+
+    <!-- MAIN -->
+
+    <main class="dashboard-main">
+
+        <div class="dashboard-heading">
+
+            <p class="section-label">
+                ADMIN PANEL
+            </p>
+
+            <h1>
+                Customers
+            </h1>
+
+            <p>
+                View registered customers and their
+                shopping information.
+            </p>
+
+        </div>
+
+
+        <!-- CUSTOMER COUNTS -->
+
+        <section class="customer-count-grid">
+
+            <div class="customer-count-card">
+
+                <span>
+                    👥
+                </span>
+
+                <div>
+
+                    <p>
+                        Total Customers
+                    </p>
+
+                    <h2 id="totalCustomers">
+                        0
+                    </h2>
+
+                </div>
+
+            </div>
+
+
+            <div class="customer-count-card">
+
+                <span>
+                    ⭐
+                </span>
+
+                <div>
+
+                    <p>
+                        Regular Customers
+                    </p>
+
+                    <h2 id="regularCustomers">
+                        0
+                    </h2>
+
+                </div>
+
+            </div>
+
+
+            <div class="customer-count-card">
+
+                <span>
+                    🆕
+                </span>
+
+                <div>
+
+                    <p>
+                        One-Time Customers
+                    </p>
+
+                    <h2 id="oneTimeCustomers">
+                        0
+                    </h2>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- FILTER -->
+
+        <section class="filter-card customer-filter">
+
+            <div>
+
+                <label for="customerTypeFilter">
+                    Customer Type
+                </label>
+
+                <select id="customerTypeFilter">
+
+                    <option value="all">
+                        All Customers
+                    </option>
+
+                    <option value="regular">
+                        Regular Customers
+                    </option>
+
+                    <option value="one-time">
+                        One-Time Customers
+                    </option>
+
+                </select>
+
+            </div>
+
+
+            <div>
+
+                <label for="customerSearch">
+                    Search Customer
+                </label>
+
+                <input
+                    type="text"
+                    id="customerSearch"
+                    placeholder="Search by name or email..."
+                >
+
+            </div>
+
+        </section>
+
+
+        <!-- CUSTOMER LIST -->
+
+        <section class="dashboard-section">
+
+            <div class="section-heading">
+
+                <p>
+                    CUSTOMER MANAGEMENT
+                </p>
+
+                <h2>
+                    Registered Customers
+                </h2>
+
+            </div>
+
+
+            <div
+                id="customerList"
+                class="customer-list"
+            >
+
+                <p class="loading-text">
+                    Loading customers...
+                </p>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <script src="js/admin-customers.js"></script>
+
+</body>
+
+</html>
+
